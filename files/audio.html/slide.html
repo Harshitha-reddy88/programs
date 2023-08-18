@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image1 {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .image2 {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .images {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="images">
+        <div>
+            <img src="https://static.toiimg.com/photo/75503656.cms" class="image1" alt="error" />
+        </div>
+
+        <div>
+            <img src="https://ychef.files.bbci.co.uk/976x549/p02y4d6r.jpg" class="image2" alt="error" />
+        </div>
+    </div>
+    <button class="btn1" onClick="privious()">privious</button>
+    <button class="btn2" onClick="after()">after</button>
+</body>
+
+<script>
+    let button1 = document.querySelector("btn1");
+    let button2 = document.querySelector("btn2");
+
+    let img1 = document.querySelector("image1");
+    let img2 = document.querySelector("image2");
+
+
+
+
+    let div2 = document.createElement("div");
+
+    div1.style.width = "500px";
+    div1.style.height = "500px";
+
+    button1.onclick = function() {
+        let div1 = document.createElement("div");
+        div1.innerText = img1;
+
+    }
+</script>
+
+</html>

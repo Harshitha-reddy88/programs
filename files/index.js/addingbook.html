@@ -1,0 +1,238 @@
+<html>
+   <head>
+      <title>addbook page</title>
+      <style>
+         .navbar{
+            margin-top:20px;
+            background-color:crimson;
+            padding:10px 0px 10px 10px;
+            border-radius:15px;
+            top:0;
+            left:0;
+            position:fixed;
+            width:100%;
+            
+         }
+        nav{
+          margin-top:20px;
+            background-color:crimson;
+            padding:10px 0px 10px 10px;
+            border-radius:15px;
+            top:0;
+            left:0;
+            position:fixed;
+            width:100%;
+            
+         }
+        
+        
+        .img{
+            width:70px;
+            border-radius:800px;
+            margin-left:30px;
+         }
+         .img:hover{
+             width:80px;
+             color:yellow;
+         }
+            
+        .flex{
+            display:flex;
+         }
+        .flex1{
+            display:flex;
+            margin-left:800px;
+            margin-top:15px;
+         }
+        
+        .view{
+            color:white;
+            font-size:25px;
+            text-decoration:none;
+         }
+        .view:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .book{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .book:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .add{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .add:hover{
+             font-size:30px;
+             color:yellow;
+         }
+         .name{
+            margin-top:8px;
+            padding:10px 80px 10px 10px; 
+            border:crimson 3px solid;
+            color:crimson;
+            border-radius:10px;
+          }
+         .main{
+            display:flex;
+            background-color:black;
+            width:600px;
+            padding:0px 30px 30px 30px;
+            border-top-left-radius:20px;
+            border-top-right-radius:20px;
+            margin-left:600px;
+            margin-top:180px;
+            opacity:0.8;
+            
+          }
+         .heading{
+           color:yellow;
+          }
+           
+        .part2{
+           margin-left:50px;
+         }
+        .button{
+           margin-left:210px;
+           padding:10px 50px 10px 50px;
+           border-radius:10px;
+           border:2px solid crimson;
+         }
+        .button:hover{
+              background-color:crimson;
+              border:2px solid crimson;
+              color:white;
+          }
+        .btn{
+          background-color:black;
+          width:600px;
+          padding:0px 30px 30px 30px;
+          border-bottom-right-radius:20px;
+          border-bottom-left-radius:20px;
+          margin-left:600px;
+          opacity:0.8;
+          
+         }
+           
+        body{
+          background:url("https://tse4.mm.bing.net/th?id=OIP.ffpEjmruHin3ChUHyqRZRAHaEK&pid=Api&P=0");
+          background-repeat:no-repeat;
+          background-attachment: fixed;  
+	  background-size: cover;
+        }
+      </style>
+   </head>
+   <body>
+   <nav>
+      <div class="navbar flex">
+         <div class="image">
+           <a href="libraryHomepage.html"><img  class="img" src="https://tse1.mm.bing.net/th?id=OIP.jeVfx14-a23XhQnKRmmwpAHaGe&pid=Api&P=0"  alt="error"></a>
+         </div>
+         
+         <div class="flex1">
+         
+            <div class="viewbook">
+               <a  class="view" href="viewpage.html">VIEW BOOK</a>
+            </div>
+            
+            <div class="about">
+               <a class="book" href="onebook.html">ABOUT BOOK</a>
+            </div>
+            
+            <div class="addbook">
+               <a class="add" href="addingbook.html">ADD BOOK</a>
+            </div>
+            
+         </div>
+      </div>
+      </nav>
+      <div class="main">
+      
+       <div class="part1">
+         <div>
+            <h2 class="heading">Book Name<br>
+            <input  class="name bookname" type="text" placeholder="name of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">Author<br>
+            <input class="name author" type="text" placeholder="name of the author"/>
+         </div>
+         <div>
+            <h2 class="heading">Year<br>
+            <input class="name year" type="text" placeholder="year of published"/>
+         </div>
+         <div>
+            <h2 class="heading">Book Price<br>
+            <input class="name price" type="text" placeholder="price of the book"/>
+         </div>
+      </div>
+      
+      <div class="part2">
+         <div>
+            <h2 class="heading">Book Type<br>
+            <input class="name type"  type="text" placeholder="type of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">publisher<br>
+            <input class="name publisher" type="text" placeholder="publisher of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">serial number<br>
+            <input class="name serialnumber" type="text" placeholder="serial number of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">Rating of the book<br>
+            <input class="name rating"  type="text" placeholder="Rating of the book"/>
+         </div>
+       </div>
+      </div>
+      <div class="btn">
+         <button class="button">ADD BOOK</button>
+      </div>
+   </body>
+   <script>
+      let button=document.querySelector("button");
+      let booksdetails=JSON.parse(localStorage.getItem("bookDetails"));
+      
+      button.onclick=function(){
+           let name=document.querySelector(".bookname").value;
+           let author=document.querySelector(".author").value;
+           let year=document.querySelector(".year").value;
+           let price=document.querySelector(".price").value;
+           let type=document.querySelector(".type").value;
+           let publisher=document.querySelector(".publisher").value;
+           let serial_number=document.querySelector(".serialnumber").value;
+           let rate=document.querySelector(".rating").value;
+           if(name=="" || author=="" || year=="" || price=="" || type=="" || publisher=="" || serial_number=="" || rate=="")
+           {
+               alert("you can't add book");
+               return;
+           }
+           for(let i=0;i<booksdetails.length;i++){
+               if(booksdetails[i].name==name)
+               {
+                    alert("book is already exist");
+                    return;
+               }
+           }
+              alert("book is added successfully");
+              window.location.href="viewpage.html";
+              
+              
+           localStorage.setItem("bookDetails",JSON.stringify([...booksdetails,{author,name,price,publisher,rate,serial_number,type,year}]));
+           console.log(localStorage.getItem("bookDetails"));
+           alert("book is added successfully");
+        }
+      
+   </script>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myhomepage</title>
+    <style>
+      nav{
+         position:fixed;
+         width: 100%;
+         top: 0px;
+         left: 0px;
+      }
+        .main{
+            display: flex;
+            background-color:black;
+            border-radius: 20px;
+        }
+        .navimg{
+            width: 70px;
+            border-radius: 50px;
+            margin:15px
+         }
+         .navimg:hover{
+            width: 72px;
+         }
+         .vesselsimg{
+            width: 70px;
+            border-radius: 50px;
+            margin:15px
+         }
+         .vesselsimg:hover{
+            width: 72px;
+         }
+         .furnitureimg{
+            width: 70px;
+            border-radius: 50px;
+            margin:15px
+         }
+         .furnitureimg:hover{
+            width: 72px;
+         }
+         .firstdiv{
+            display: flex;
+         }
+         .img{
+            margin-left: 100px;
+         }
+         .secdiv{
+            display: flex;
+            margin-left:500px;
+         }
+         .thidiv{
+            display: flex;
+            margin-left: 300px;
+         }
+         .myhome:hover{
+            color:yellow;
+            font-size: 25px;
+         }
+         .myhome{
+            color: crimson;
+         }
+         .kichen{
+            color: crimson;
+         }
+         .kichen:hover{
+            color:yellow;
+            font-size: 25px;
+         }
+         .furnitures{
+            color: crimson;
+         }
+         .furnitures:hover{
+            color:yellow;
+            font-size: 25px;
+         }
+         .button{
+            margin-left: 1600px;
+            margin-top: 100px;
+            padding: 10px 30px 10px 30px;
+            border-radius: 10px;
+            background-color:black;
+            color:crimson;
+            font-size: 18px;
+            margin-bottom: 80px;
+         }
+         .button:hover{
+            color:yellow;
+            font-size: 20px;
+         }
+         .anchor{
+            text-decoration: none;
+         }
+         .image{
+            margin-left:100px;
+            border-radius: 20px;
+            margin-top:-90px;
+         }
+         .avatar{
+            margin-top: 50px;
+         }
+         .avatar:hover{
+            width:300px;
+         }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="main">
+
+          <div class="firstdiv">
+            <div class="img">
+                <img class="navimg" src="home.jpeg" alt=""/>
+            </div>
+            <div class="home">
+               <h1 class="myhome">MY HOME</h1>
+            </div>
+          </div>
+
+          <div class="secdiv">
+             <div>
+                <img  class="vesselsimg" src="vessels.jpeg" alt="">
+             </div>
+             <div class="vessels">
+                <a class="anchor" href="kichen.html"><h1 class="kichen">KICHEN VESSELS</h1></a>
+             </div>
+          </div>
+          <div class="thidiv">
+            <div>
+                <img  class="furnitureimg" src="furniture.jpeg" alt="">
+            </div>
+            <div class="things">
+                <a class="anchor" href="furniture.html"><h1 class="furnitures">FURNITURES</h1></a>
+            </div>
+          </div>
+
+        </div>
+    </nav>
+    <a href="home.html"><button class="button">GO BACK</button></a>
+    <div class="details"></div>
+</body>
+<script>
+    let structure=JSON.parse(localStorage.getItem("myhome"));
+    let maindiv=document.querySelector(".details");
+    let mindiv=document.createElement("div");
+    for(let i=0;i<structure.length;i++){
+        let img=document.createElement("div");
+        let avatar=document.createElement("img");
+        img.setAttribute("class","image");
+        avatar.setAttribute("src",structure[i].avatar);
+        avatar.setAttribute("onclick",`onehome(${i})`);
+        img.append(avatar);
+        img.style.width="200px";
+        mindiv.append(img);
+        maindiv.append(mindiv);
+        maindiv.style.marginLeft="50px"
+        mindiv.style.display="flex";
+        mindiv.style.flexWrap="wrap";
+      //   mindiv.style.marginTop="20px";
+        mindiv.style.marginLeft="-90px"
+      //   img.style.marginTop="20px";
+      //   img.style.width="350px";
+        img.style.height="300px";
+        mindiv.style.textAlign="center";
+        avatar.setAttribute("class","avatar");
+        function onehome(i){
+                 localStorage.setItem("aboutHome",JSON.stringify(structure[i]));
+                 window.location.href="selecthome.html";
+              }
+                
+    }
+</script>
+</html>

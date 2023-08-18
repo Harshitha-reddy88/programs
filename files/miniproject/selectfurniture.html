@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selecthome page</title>
+    <style>
+        .btn{
+            padding: 10px 50px 10px 50px;
+            border-radius:10px;
+            margin-left: 830px;
+            margin-top: 30px;
+            background-color:black;
+            color:white;
+            font-size: 20px;
+        }
+        .btn:hover{
+            background-color:crimson;
+            color:yellow;
+            font-size: 25px;
+        }
+        .main{
+            
+            background-color:black;
+            display:flex;
+            margin-left: 300px;
+            margin-right: 300px;
+            margin-top: 100px;
+            border-radius:1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+    <div>
+        <button class="btn">BACK</button>
+    </div>
+</body>
+<script>
+    let homefurniture=JSON.parse(localStorage.getItem("aboutfurniture"));
+    let maindiv=document.querySelector(".main");
+    let img=document.createElement("img");
+    img.setAttribute("src",homefurniture.avatar);
+    img.style.width="500px";
+    img.style.textAlign="center";
+    img.style.paddingTop="80px";
+    img.style.paddingBottom="80px";
+    img.style.marginLeft="350px";
+    img.setAttribute("class","image")
+    maindiv.append(img);
+    let button=document.querySelector(".btn");
+    button.onclick=function(){
+        window.location.href="furniture.html";
+    }
+</script>
+</html>

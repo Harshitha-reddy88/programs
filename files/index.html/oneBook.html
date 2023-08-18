@@ -1,0 +1,182 @@
+<html>
+   <head>
+      <title>onebook</title>
+      <style>
+         
+         body{
+           background:url("https://tse4.mm.bing.net/th?id=OIP.ffpEjmruHin3ChUHyqRZRAHaEK&pid=Api&P=0");
+           background-repeat:no-repeat;
+           background-attachment: fixed;  
+	   background-size: cover;
+        }
+        .navbar{
+            margin-top:20px;
+            background-color:crimson;
+            padding:10px 0px 10px 10px;
+            border-radius:15px;
+         }
+        
+        .img{
+            width:70px;
+            border-radius:800px;
+            margin-left:30px;
+         }
+         .img:hover{
+             width:80px;
+             color:yellow;
+         }
+            
+        .flex{
+            display:flex;
+         }
+        .flex1{
+            display:flex;
+            margin-left:800px;
+            margin-top:15px;
+         }
+        
+        .view{
+            color:white;
+            font-size:25px;
+            text-decoration:none;
+         }
+        .view:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .book{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .book:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .add{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .add:hover{
+             font-size:30px;
+             color:yellow;
+         }
+       .button{
+         padding:10px 50px 10px 50px;
+         margin-left:900px;
+         margin-top:10px;
+         font-size:20px;
+         border-radius:10px;
+         background-color:black;
+         color:white;
+        }
+       .button:hover{
+            background-color:crimson;
+            color:white;
+        }
+         
+            
+      </style>
+   </head>
+   <body>
+      <div class="navbar flex">
+         <div class="image">
+           <a href="libraryHomepage.html"><img  class="img" src="https://tse1.mm.bing.net/th?id=OIP.jeVfx14-a23XhQnKRmmwpAHaGe&pid=Api&P=0"  alt="error"></a>
+         </div>
+         
+         <div class="flex1">
+         
+            <div class="viewbook">
+               <a  class="view" href="viewpage.html">VIEW BOOK</a>
+            </div>
+            
+            <div class="about">
+               <a class="book" href="onebook.html">ABOUT A BOOK</a>
+            </div>
+            
+            <div class="addbook">
+               <a class="add" href="addingbook.html">ADD BOOK</a>
+            </div>
+            
+         </div>
+      </div>
+      <div class="main"></div>
+      <a href="viewpage.html"><button class="button">BACK</button></a>
+   </body>
+   <script>
+       let storage=JSON.parse(localStorage.getItem("aboutBook"));
+       
+       
+       let main=document.querySelector(".main");
+       
+       let book=document.createElement("div");
+       
+       let name=document.createElement("div");
+       name.innerText=storage.name;
+       
+       let publisher=document.createElement("div");
+       publisher.innerText="(" + storage.publisher +")";
+       
+       let author=document.createElement("div");
+       author.innerText="-"+storage.author;
+       
+       let avatar=document.createElement("img");
+       avatar.setAttribute("src", storage.avatar);
+       
+       let price=document.createElement("div");
+       price.innerText="price:"+storage.price;
+       
+       let rate=document.createElement("div");
+       rate.innerText="rating:"+"  "+storage.rate;
+       
+       
+       let serial_number=document.createElement("div");
+       serial_number.innerText="serialNumber:"+storage.serial_number;
+       
+       let type=document.createElement("div");
+       type.innerText="type:"+storage.type;
+       
+       let year=document.createElement("div");
+       year.innerText="("+storage.year+")";
+       
+       book.append(name,author,avatar,year,type,publisher,rate,price,serial_number,publisher);
+       let button=document.querySelector(".button");
+       
+       button.onclick=function()
+       {
+           window.location.href="viewpage.html";
+       }
+           
+       book.style.backgroundColor="black";
+       book.style.marginTop="50px";
+       book.style.marginLeft="700px";
+       book.style.opacity="0.9";
+       
+       author.style.marginLeft="150px";
+       author.style.color="yellow";
+       author.style.marginBottom="10px";
+       publisher.style.marginLeft="300px";
+       publisher.style.marginTop="50px";
+       year.style.marginTop="10px";
+       rate.style.marginRight="80px";
+       rate.style.marginTop="15px";
+       price.style.marginLeft="100px";
+       price.style.marginTop="-20px";
+       serial_number.style.marginTop="20px";
+       type.style.marginTop="15px";
+       
+       name.style.fontSize="30px";
+       name.style.color="yellow";
+       book.style.color="white";
+       book.style.width="500px";
+       book.style.padding="50px 10px 100px 10px";
+       book.style.textAlign="center";
+       main.append(book);
+       
+   </script>
+</html>
